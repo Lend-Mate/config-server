@@ -1,0 +1,20 @@
+networks:
+  lendmate-net:
+    external: true
+
+services:
+  config-server:
+    image: "config-server"
+    build: .
+    container_name: config-server
+    environment:
+      SPRING_PROFILES_ACTIVE: prod
+      JAVA_OPTS: >-
+        -XX:MaxRAMPercentage=60.0
+        -XX:+UseSerialGC
+        -Xss256k
+        -XX:MaxMetaspaceSize=100m
+    mem_limit: 300m
+    restart: unless-stopped
+    networks:
+      - lendmate-net

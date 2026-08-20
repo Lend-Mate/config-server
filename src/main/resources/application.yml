@@ -1,3 +1,9 @@
+spring:
+  profiles:
+    group:
+      dev: native
+      stage: git
+
 server:
   port: 8888
 
@@ -10,14 +16,14 @@ spring:
     config:
       server:
         native:
-          search-locations: file:///C:/Users/elifcelik/IdeaProjects/lend-mate/lendmate-config-repo/
+          search-locations: file:///${CONFIG_REPO_PATH}/
 
 
 ---
 spring:
   config:
     activate:
-      on-profile: stage
+      on-profile: prod
   cloud:
     config:
       server:
