@@ -9,6 +9,9 @@ services:
     container_name: config-server
     environment:
       SPRING_PROFILES_ACTIVE: prod
+      GITHUB_USERNAME: elifcelik-eva
+      GITHUB_TOKEN: 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
+      CONFIG_GIT_URI: https://github.com/Lend-Mate/lendmate-config-repo.git
       JAVA_OPTS: >-
         -XX:MaxRAMPercentage=60.0
         -XX:+UseSerialGC
