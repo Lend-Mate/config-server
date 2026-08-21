@@ -4,6 +4,8 @@ networks:
 
 services:
   config-server:
+    ports:
+      - "8888:8888"
     image: "config-server"
     build: .
     container_name: config-server
