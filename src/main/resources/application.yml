@@ -18,6 +18,21 @@ spring:
         native:
           search-locations: file:///${CONFIG_REPO_PATH}/
 
+---
+spring:
+  config:
+    activate:
+      on-profile: stage
+  cloud:
+    config:
+      server:
+        git:
+          uri: ${CONFIG_GIT_URI}
+          username: ${GITHUB_USERNAME}
+          password: ${GITHUB_TOKEN}
+          default-label: main
+          clone-on-start: true
+          force-pull: true
 
 ---
 spring:
